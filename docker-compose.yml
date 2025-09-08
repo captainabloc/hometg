@@ -7,7 +7,7 @@ services:
       dockerfile: HomeTG.API/Dockerfile
     pull_policy: build
     ports:
-      - "5234:80"
+      - "5234:8000"
     volumes:
       - /opt/hometg/data/hometg:/root/.local/share/hometg/DB/hometg
     environment:
