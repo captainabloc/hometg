@@ -7,7 +7,7 @@ services:
       dockerfile: HomeTG.API/Dockerfile
     pull_policy: build
     ports:
-      - "5234:8000"
+      - "5234:5234"
     volumes:
       - /home/clem/docker/hometg/data/hometg:/root/.local/share/hometg/DB/hometg
     environment:
@@ -33,7 +33,7 @@ services:
       WDS_SOCKET_PORT: 0
     pull_policy: build
     ports:
-      - "5235:3000"
+      - "5235:5235"
     networks:
       - public
     depends_on:
