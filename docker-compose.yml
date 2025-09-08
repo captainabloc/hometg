@@ -13,8 +13,8 @@ services:
     environment:
       "ASPNETCORE_ENVIRONMENT": "linux"
       # Optional way to overwrite database connection.
-      # "ConnectionStrings__Sqlite": "Data Source=/usr/share/hometg/Collection.db"
-      # "provider": "Sqlite"
+       "ConnectionStrings__Sqlite": "Data Source=/usr/share/hometg/Collection.db"
+       "provider": "Sqlite"
       "ConnectionStrings__Postgres": "Host=database;Username=hometg;Password=supersecretpassword;Database=hometg_db"
       "provider": "Postgres"
     networks:
