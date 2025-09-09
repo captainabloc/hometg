@@ -54,18 +54,16 @@ namespace HomeTG.API.Utils
         }
 
         static async Task SaveUrlContent(string url, string Filename)
-{
-    using (var client = new HttpClient())
-    {
-        client.Timeout = Timeout.InfiniteTimeSpan; // ⏱️ Disable timeout
-
-        using (var result = await client.GetAsync(url))
         {
-            var content = result.IsSuccessStatusCode ? await result.Content.ReadAsByteArrayAsync() : null;
-
-            if (content != null)
+            using (var client = new HttpClient())
+            using (var result = await client.GetAsync(url))
             {
-                await File.WriteAllBytesAsync(Filename, content);
+                var content = result.IsSuccessStatusCode ? await result.Content.ReadAsByteArrayAsync() : null;
+
+                if (content != null)
+                {
+                    await File.WriteAllBytesAsync(Filename, content);
+                }
             }
         }
     }
